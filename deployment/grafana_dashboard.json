@@ -1,0 +1,36 @@
+{
+  "title": "制造业Agent运维助手",
+  "panels": [
+    {
+      "title": "HTTP 请求速率",
+      "targets": [{"expr": "rate(http_requests_total[1m])"}]
+    },
+    {
+      "title": "HTTP P95 延迟",
+      "targets": [{"expr": "histogram_quantile(0.95, rate(http_request_duration_seconds_bucket[1m]))"}]
+    },
+    {
+      "title": "LLM 调用次数",
+      "targets": [{"expr": "rate(llm_calls_total[5m])"}]
+    },
+    {
+      "title": "Token 消耗",
+      "targets": [{"expr": "rate(llm_token_usage_total[5m])"}]
+    },
+    {
+      "title": "检索延迟 (P50/P95)",
+      "targets": [
+        {"expr": "histogram_quantile(0.50, rate(retrieval_duration_seconds_bucket[5m]))", "legendFormat": "P50"},
+        {"expr": "histogram_quantile(0.95, rate(retrieval_duration_seconds_bucket[5m]))", "legendFormat": "P95"}
+      ]
+    },
+    {
+      "title": "活跃会话数",
+      "targets": [{"expr": "active_sessions"}]
+    },
+    {
+      "title": "知识库文档数",
+      "targets": [{"expr": "knowledge_base_documents"}]
+    }
+  ]
+}

@@ -1,0 +1,207 @@
+[
+  {
+    "id": "diag_001",
+    "category": "diagnosis",
+    "difficulty": "easy",
+    "query": "注塑机报警HT-E-0021是什么意思，怎么处理？",
+    "expected_keywords": ["料筒温度传感器", "电阻", "100Ω", "PID", "更换"],
+    "expected_sop": "海天MA1200 注塑机操作手册",
+    "min_answer_length": 200,
+    "must_cite": true
+  },
+  {
+    "id": "diag_002",
+    "category": "diagnosis",
+    "difficulty": "medium",
+    "query": "注塑机料筒温度一直上不去，偏差超过30度，怎么排查？",
+    "expected_keywords": ["加热圈", "温控器", "传感器", "电源", "排查"],
+    "expected_sop": "海天MA1200 注塑机操作手册",
+    "min_answer_length": 200,
+    "must_cite": true
+  },
+  {
+    "id": "diag_003",
+    "category": "diagnosis",
+    "difficulty": "hard",
+    "query": "CNC加工主轴有异响还振动，报警SP-9001，什么原因怎么修？",
+    "expected_keywords": ["轴承", "刀具", "动平衡", "服务商", "降低"],
+    "expected_sop": "FANUC CNC 加工中心操作手册",
+    "min_answer_length": 150,
+    "must_cite": true
+  },
+  {
+    "id": "sop_001",
+    "category": "sop",
+    "difficulty": "easy",
+    "query": "注塑机换模具的具体步骤是什么？",
+    "expected_keywords": ["关闭", "降温", "螺栓", "吊车", "安装", "试运行", "步骤", "安全"],
+    "expected_sop": "注塑机换模作业指导书",
+    "min_answer_length": 300,
+    "must_cite": true
+  },
+  {
+    "id": "sop_002",
+    "category": "sop",
+    "difficulty": "easy",
+    "query": "新员工进车间要注意哪些安全事项？",
+    "expected_keywords": ["PPE", "安全帽", "防护眼镜", "急停", "培训", "消防"],
+    "expected_sop": "新员工入职安全培训大纲",
+    "min_answer_length": 200,
+    "must_cite": true
+  },
+  {
+    "id": "sop_003",
+    "category": "sop",
+    "difficulty": "medium",
+    "query": "冲压线操作有哪些安全规定？",
+    "expected_keywords": ["手不入模", "光电保护", "急停", "上锁挂牌", "个人防护"],
+    "expected_sop": "冲压线安全操作规程",
+    "min_answer_length": 200,
+    "must_cite": true
+  },
+  {
+    "id": "alarm_001",
+    "category": "alarm",
+    "difficulty": "easy",
+    "query": "HT-E-0022报警码是什么含义？",
+    "expected_keywords": ["温度", "超上限", "P0", "停止加热"],
+    "expected_sop": "设备报警码对照表",
+    "min_answer_length": 50,
+    "must_cite": true
+  },
+  {
+    "id": "alarm_002",
+    "category": "alarm",
+    "difficulty": "medium",
+    "query": "CNC加工中心SP-9001和SV-0401两个报警码分别是什么意思？",
+    "expected_keywords": ["振动", "伺服放大器", "P0", "主轴"],
+    "expected_sop": "FANUC CNC 报警码对照表",
+    "min_answer_length": 100,
+    "must_cite": true
+  },
+  {
+    "id": "quality_001",
+    "category": "quality",
+    "difficulty": "easy",
+    "query": "注塑件表面有凹陷怎么处理？",
+    "expected_keywords": ["缩水", "保压", "模具温度", "浇口", "调整"],
+    "expected_sop": "注塑件常见缺陷及处理",
+    "min_answer_length": 150,
+    "must_cite": true
+  },
+  {
+    "id": "quality_002",
+    "category": "quality",
+    "difficulty": "medium",
+    "query": "冲压件边缘毛刺太大超出标准，怎么解决？",
+    "expected_keywords": ["刃口", "修磨", "间隙", "材料硬度", "更换镶块"],
+    "expected_sop": "冲压件常见缺陷及处理",
+    "min_answer_length": 150,
+    "must_cite": true
+  },
+  {
+    "id": "maintain_001",
+    "category": "maintenance",
+    "difficulty": "easy",
+    "query": "模具日常保养需要做哪些项目？",
+    "expected_keywords": ["清洁", "分型面", "顶出", "冷却水", "润滑"],
+    "expected_sop": "模具保养与维修规程",
+    "min_answer_length": 100,
+    "must_cite": true
+  },
+  {
+    "id": "maintain_002",
+    "category": "maintenance",
+    "difficulty": "easy",
+    "query": "每天开机前设备点检要检查哪些？",
+    "expected_keywords": ["液压油", "润滑", "急停", "安全门", "温度"],
+    "expected_sop": "设备点检标准（每日）",
+    "min_answer_length": 100,
+    "must_cite": true
+  },
+  {
+    "id": "param_001",
+    "category": "parameter",
+    "difficulty": "medium",
+    "query": "45钢粗铣用什么切削参数？",
+    "expected_keywords": ["切削速度", "120", "进给量", "切深", "硬质合金"],
+    "expected_sop": "切削参数参考表",
+    "min_answer_length": 80,
+    "must_cite": true
+  },
+  {
+    "id": "out_001",
+    "category": "out_of_domain",
+    "difficulty": "easy",
+    "query": "今天天气怎么样？",
+    "expected_keywords": [],
+    "expected_sop": "",
+    "min_answer_length": 20,
+    "must_cite": false,
+    "expected_refusal": true
+  },
+  {
+    "id": "out_002",
+    "category": "out_of_domain",
+    "difficulty": "medium",
+    "query": "焊接机器人怎么编程？",
+    "expected_keywords": [],
+    "expected_sop": "",
+    "min_answer_length": 20,
+    "must_cite": false,
+    "expected_refusal": true
+  },
+  {
+    "id": "out_003",
+    "category": "out_of_domain",
+    "difficulty": "easy",
+    "query": "帮我写一个Python爬虫脚本",
+    "expected_keywords": [],
+    "expected_sop": "",
+    "min_answer_length": 20,
+    "must_cite": false,
+    "expected_refusal": true
+  },
+  {
+    "id": "case_001",
+    "category": "case_memory",
+    "difficulty": "medium",
+    "query": "之前注塑机HT-E-0021报警的时候是怎么解决的？",
+    "expected_keywords": ["传感器", "更换", "校准"],
+    "expected_sop": "",
+    "min_answer_length": 100,
+    "must_cite": false,
+    "expects_history": true
+  },
+  {
+    "id": "case_002",
+    "category": "case_memory",
+    "difficulty": "medium",
+    "query": "CNC加工中心之前主轴有问题是怎么修的？",
+    "expected_keywords": ["轴承", "刀具", "动平衡"],
+    "expected_sop": "",
+    "min_answer_length": 80,
+    "must_cite": false,
+    "expects_history": true
+  },
+  {
+    "id": "safety_001",
+    "category": "safety",
+    "difficulty": "easy",
+    "query": "车间6S管理中的整理和整顿有什么区别？",
+    "expected_keywords": ["必要", "不必要", "定位", "标识", "红牌"],
+    "expected_sop": "车间6S管理标准",
+    "min_answer_length": 100,
+    "must_cite": true
+  },
+  {
+    "id": "safety_002",
+    "category": "safety",
+    "difficulty": "medium",
+    "query": "发现车间着火了，正确流程是什么？",
+    "expected_keywords": ["呼救", "消防报警器", "灭火器", "逃生", "集合点"],
+    "expected_sop": "新员工入职安全培训大纲",
+    "min_answer_length": 100,
+    "must_cite": true
+  }
+]

@@ -1,0 +1,47 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+*.egg
+
+# Virtual Environment
+venv/
+.venv/
+env/
+
+# Environment
+.env
+.env.local
+.env.production
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Project
+*.log
+logs/
+data/uploads/*
+!data/uploads/.gitkeep
+data/chroma/
+data/manufacturing.db
+data/milvus_lite.db/
+node_modules/
+frontend-dist.tar.gz
+src-sync.tar.gz
+
+# Deployment scripts (may contain credentials)
+scripts/deploy_fixes.py
+scripts/upload_admin.py
+scripts/upload_chat.py
+scripts/upload_docs.py
+scripts/check_ocr.py
+scripts/test_ocr.py

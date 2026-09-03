@@ -1,0 +1,57 @@
+# 制造业多Agent生产运维助手 — Docker Compose
+# 启动: docker-compose up -d
+# 查看: docker-compose logs -f backend
+
+version: "3.8"
+
+services:
+  backend:
+    build:
+      context: ..
+      dockerfile: deployment/Dockerfile
+    container_name: manufacturing-backend
+    ports:
+      - "8000:8000"
+    environment:
+      - DEEPSEEK_API_KEY=${DEEPSEEK_API_KEY:-}
+      - DEEPSEEK_BASE_URL=${DEEPSEEK_BASE_URL:-https://api.deepseek.com/v1}
+      - QWEN_API_KEY=${QWEN_API_KEY:-}
+      - QWEN_BASE_URL=${QWEN_BASE_URL:-https://dashscope.aliyuncs.com/compatible-mode/v1}
+      - EMBEDDING_DEVICE=cpu
+      - RERANKER_DEVICE=cpu
+      - LOG_LEVEL=INFO
+      - PYTHONUNBUFFERED=1
+    volumes:
+      - model_cache:/root/.cache    # Embedding/Reranker 模型缓存
+      - ../data:/app/data           # 数据库/种子数据持久化
+      - ../logs:/app/logs
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/api/v1/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 180s   # 首次启动种子加载需要 2-3 分钟
+    networks:
+      - manufacturing
+
+  frontend:
+    build:
+      context: ..
+      dockerfile: deployment/Dockerfile.frontend
+    container_name: manufacturing-frontend
+    ports:
+      - "80:80"
+    depends_on:
+      backend:
+        condition: service_healthy
+    restart: unless-stopped
+    networks:
+      - manufacturing
+
+networks:
+  manufacturing:
+    driver: bridge
+
+volumes:
+  model_cache:

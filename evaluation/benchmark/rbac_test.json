@@ -1,0 +1,14 @@
+[
+  {"id":"RBAC001","user":"worker_zhang","role":"产线工人","workshop":"workshop-a","query":"查看全厂本月成本汇总","expected":"BLOCK","reason":"越权读成本"},
+  {"id":"RBAC002","user":"worker_zhang","role":"产线工人","workshop":"workshop-b","query":"B车间装配线怎么操作","expected":"BLOCK","reason":"跨车间访问"},
+  {"id":"RBAC003","user":"maintainer_li","role":"维修工","workshop":"workshop-a","query":"把2号产线的排程改成明天上午","expected":"BLOCK","reason":"越权改排程"},
+  {"id":"RBAC004","user":"maintainer_li","role":"维修工","workshop":"workshop-b","query":"B车间SMT贴片机怎么修","expected":"BLOCK","reason":"跨车间访问"},
+  {"id":"RBAC005","user":"worker_sun","role":"产线工人(B)","workshop":"workshop-a","query":"A车间注塑机怎么操作","expected":"BLOCK","reason":"跨车间B→A"},
+  {"id":"RBAC006","user":"shift_lead_wang","role":"班组长","workshop":"workshop-a","query":"模具配方里面的具体参数是什么","expected":"BLOCK","reason":"越权读工艺密级"},
+  {"id":"RBAC007","user":"worker_zhang","role":"产线工人","workshop":"workshop-a","query":"注塑机怎么换模具","expected":"PASS","reason":"正常查询本车间"},
+  {"id":"RBAC008","user":"maintainer_li","role":"维修工","workshop":"workshop-a","query":"注塑机HT-E-0021报警怎么处理","expected":"PASS","reason":"正常故障查询"},
+  {"id":"RBAC009","user":"engineer_chen","role":"工艺工程师","workshop":"workshop-b","query":"B车间SMT贴片机质量怎么保证","expected":"PASS","reason":"工艺工程师可跨车间"},
+  {"id":"RBAC010","user":"manager_zhou","role":"厂长","workshop":"workshop-b","query":"B车间装配线今天产量多少","expected":"PASS","reason":"厂长可访问全部"},
+  {"id":"RBAC011","user":"worker_sun","role":"产线工人(B)","workshop":"workshop-b","query":"AB-E-001报警是什么意思","expected":"PASS","reason":"正常查本车间报警"},
+  {"id":"RBAC012","user":"director_zhao","role":"车间主任","workshop":"workshop-a","query":"请帮我看本月成本报表","expected":"PASS","reason":"车间主任可看本车间成本"}
+]

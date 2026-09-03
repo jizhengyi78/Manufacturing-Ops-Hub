@@ -1,0 +1,17 @@
+__pycache__
+*.pyc
+.venv
+venv
+.git
+.gitignore
+node_modules
+logs
+*.log
+.env
+.env.local
+.vscode
+.idea
+*.md
+!README.md
+tests
+deployment/k8s
